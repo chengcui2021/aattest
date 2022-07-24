@@ -1,0 +1,21 @@
+{
+  "name": "aat-backend-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "mocha --timeout 10000000000"
+  },
+  "author": "Cheng Cui",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "express": "^4.16.4",
+    "mocha": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.12"
+  }
+}
