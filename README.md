@@ -9,6 +9,15 @@ yarn install
 
 npm install
 ```
+To run it please use the following command:
+
+```
+yarn start
+
+// or
+
+npm start
+```
 And to run the unit test you need to use the following command:
 
 ```

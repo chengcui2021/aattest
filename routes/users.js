@@ -10,7 +10,6 @@ const userRoutes = (app, fs) => {
             if (err) {
                 throw err;
             }
-
             res.send(JSON.parse(data));
         });
     });
@@ -23,10 +22,14 @@ const userRoutes = (app, fs) => {
             }
 
             const userId = req.params["id"];
-
             const users = JSON.parse(data)
 
-            res.send(users[userId]);
+            if(!users[userId]){
+                console.log('User not found')
+                res.status(404).send('User not found'); 
+            }else{
+                res.send(users[userId]);
+            }
         });
     });
 
@@ -39,7 +42,11 @@ const userRoutes = (app, fs) => {
             const filters = req.query;
             const users = Object.values(JSON.parse(data))
             const filteredUsers = users.filter(user=>user.name.indexOf(filters.filters)>-1)
-            res.send(filteredUsers)
+            if(filteredUsers.length===0){
+                res.status(404).send('User not found');
+            }else{
+                res.send(filteredUsers)
+            }
         });
     });
 }
